@@ -22,6 +22,8 @@ public class AnotherDemoEntity {
 
     @Convert(converter = EntityAttributeConverter.class)
     private String name;
+    
+    private String unencryptedName;
 
     public void setName(String arg) {
         logger.info("Setting field value to {}", arg);
@@ -39,12 +41,13 @@ public class AnotherDemoEntity {
     public AnotherDemoEntity(String field) {
         logger.info("Setting field to {}", field);
         name = field;
+        unencryptedName = field;
     }
 
     public AnotherDemoEntity() {}
 
     @Override
     public String toString() {
-        return String.format("%s: id=%d, field=%s", this.getClass().getSimpleName(), id, name);
+        return String.format("%s: id=%d, field=%s, unencrypted=%s", this.getClass().getSimpleName(), id, name, unencryptedName);
     }
 }

@@ -23,7 +23,7 @@ public class DemoEntity {
 
     @Type(type = "encryptedString")
     @Column(name = "test_field")
-    private String encryptedField;
+    protected String encryptedField;
     
     public void setEncryptedField(String arg) {
         logger.info("Setting field value to {}", arg);

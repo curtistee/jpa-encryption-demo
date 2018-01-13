@@ -4,8 +4,10 @@ import com.example.demo.entity.AnotherDemoEntity;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface AnotherDemoEntityRepository extends CrudRepository<AnotherDemoEntity, Long> {
+public interface AnotherDemoEntityRepository extends CrudRepository<AnotherDemoEntity, String> {
 
-    AnotherDemoEntity findAnotherDemoEntityByName(String arg);
+    AnotherDemoEntity findByName(String arg);
+    
+    AnotherDemoEntity findByUnencryptedName(String arg);
 
 }
