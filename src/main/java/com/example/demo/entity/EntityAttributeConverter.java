@@ -17,7 +17,7 @@ public class EntityAttributeConverter implements AttributeConverter<String, Stri
     @Override
     public String convertToDatabaseColumn(String attribute) {
         String encrypted = standardPBEStringEncryptor.encrypt(attribute);
-        logger.info("Encrypted '{}' to '{}'", attribute, encrypted);
+        logger.info("{}: Encrypted '{}' to '{}'", this.getClass().getSimpleName(), attribute, encrypted);
         
         return encrypted;
     }
@@ -25,7 +25,7 @@ public class EntityAttributeConverter implements AttributeConverter<String, Stri
     @Override
     public String convertToEntityAttribute(String dbData) {
         String decrypted = standardPBEStringEncryptor.decrypt(dbData);
-        logger.info("Decrypted '{}' to '{}'", dbData, decrypted);
+        logger.info("{}: Decrypted '{}' to '{}'", this.getClass().getSimpleName(), dbData, decrypted);
         
         return decrypted;
     }

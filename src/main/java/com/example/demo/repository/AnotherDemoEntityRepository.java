@@ -1,13 +1,13 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.AnotherDemoEntity;
+import com.example.demo.entity.DemoEntityTwo;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface AnotherDemoEntityRepository extends CrudRepository<AnotherDemoEntity, String> {
+public interface AnotherDemoEntityRepository extends CrudRepository<DemoEntityTwo, Long> {
 
-    AnotherDemoEntity findByName(String arg);
+    DemoEntityTwo findByName(String arg);
     
-    AnotherDemoEntity findByUnencryptedName(String arg);
+    DemoEntityTwo findByUnencryptedName(String arg);
 
 }

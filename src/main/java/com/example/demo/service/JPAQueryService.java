@@ -1,10 +1,12 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.DemoEntity;
+import com.example.demo.entity.DemoEntityThree;
 
 
 public interface JPAQueryService {
 
-    DemoEntity findByUnencryptedValue(String value);
+    DemoEntityThree findByUnencryptedValue(String value);
+    
+    DemoEntityThree save(DemoEntityThree entity);
     
 }

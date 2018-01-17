@@ -11,10 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 @Entity
-public class YetAnotherDemoEntity {
+public class DemoEntityFour {
 
     @Transient
-    private static final Logger logger = LoggerFactory.getLogger(DemoEntity.class);
+    private static final Logger logger = LoggerFactory.getLogger(DemoEntityFour.class);
     @Transient
     private final StandardPBEStringEncryptor standardPBEStringEncryptor = JasyptConfigurator.standardPBEStringEncryptor();
 
@@ -32,9 +32,9 @@ public class YetAnotherDemoEntity {
         return standardPBEStringEncryptor.decrypt(this.name);
     }
     
-    public YetAnotherDemoEntity() {}
+    public DemoEntityFour() {}
     
-    public YetAnotherDemoEntity(String name) {
+    public DemoEntityFour(String name) {
         logger.info("Creating new {} with name '{}'", this.getClass().getSimpleName(), name);
         this.name = standardPBEStringEncryptor.encrypt(name);
     }
