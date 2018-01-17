@@ -11,7 +11,7 @@ import javax.persistence.AttributeConverter;
 @Component
 public class EntityAttributeConverter implements AttributeConverter<String, String> {
     
-    private StringEncryptor standardPBEStringEncryptor = JasyptConfigurator.standardPBEStringEncryptor();
+    private final StringEncryptor standardPBEStringEncryptor = JasyptConfigurator.standardPBEStringEncryptor();
     private static final Logger logger = LoggerFactory.getLogger(EntityAttributeConverter.class);
 
     @Override

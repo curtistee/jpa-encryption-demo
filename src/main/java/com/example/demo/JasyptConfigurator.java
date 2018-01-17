@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.jasypt.digest.StandardStringDigester;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.hibernate4.encryptor.HibernatePBEStringEncryptor;
 import org.jasypt.salt.StringFixedSaltGenerator;
@@ -11,10 +10,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class JasyptConfigurator {
-
-    private StandardPBEStringEncryptor defaultStringEncryptor;
-    private StandardStringDigester passwordDigester;
-    
     
     @Bean
     public BasicTextEncryptor basicTextEncryptor() {

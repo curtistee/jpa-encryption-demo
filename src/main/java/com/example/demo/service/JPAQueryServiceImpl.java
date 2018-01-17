@@ -18,7 +18,7 @@ import java.util.List;
 public class JPAQueryServiceImpl implements JPAQueryService {
     
     private final JPAQueryRepository jpaQueryRepository;
-    static final StringEncryptor standardPBEStringEncryptor = JasyptConfigurator.standardPBEStringEncryptor();
+    private static final StringEncryptor standardPBEStringEncryptor = JasyptConfigurator.standardPBEStringEncryptor();
     
     @Autowired
     public JPAQueryServiceImpl(JPAQueryRepository jpaQueryRepository) {
