@@ -14,6 +14,7 @@ import com.example.demo.repository.YetAnotherDemoEntityRepository;
 import com.example.demo.service.JPAQueryService;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -130,8 +131,8 @@ public class DemoApplicationTests {
         Assert.assertNotNull("Should not be null.", entity1);
     }
     
-    /* This always works. */
-    @Test
+    /* This always works, but is vendor-specific. No beans for hsqldb, only mysql. */
+    @Ignore
     public void testColumnTransformerEncryption() {
         DemoEntityFive entity = new DemoEntityFive("columnConverterTest");
         columnConverterDemoEntityRepository.save(entity);
